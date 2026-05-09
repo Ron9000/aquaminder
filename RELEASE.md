@@ -2,6 +2,34 @@
 
 This repository is wired for the first AquaMinder iOS/TestFlight handoff. Use this document as the release checklist for signing, App Group setup, and TestFlight preparation.
 
+## GitHub Publish Path
+
+Release should treat `ronbruenner-commits/aquaminder` as the canonical GitHub repository for this checkout.
+
+- HTTPS repo URL: `https://github.com/ronbruenner-commits/aquaminder.git`
+- SSH remote URL: `git@github.com:ronbruenner-commits/aquaminder.git`
+- Release branch to publish: `codex/gst-15-release-plumbing`
+- Base branch: `main`
+
+One-time bootstrap still required outside this checkout:
+
+1. Create the empty GitHub repository `ronbruenner-commits/aquaminder`.
+2. Install the connected GitHub app on that repository so agent-driven PR creation can see it.
+3. Confirm the repo default branch is `main`.
+
+Once the repo exists, the publish path is:
+
+1. Confirm `origin` points at `git@github.com:ronbruenner-commits/aquaminder.git`.
+2. Push `main` if the remote is empty.
+3. Push `codex/gst-15-release-plumbing`.
+4. Open a draft PR from `codex/gst-15-release-plumbing` to `main`.
+
+Current failure modes to expect:
+
+- If the repo does not exist yet, push and PR creation both fail.
+- If the GitHub app is not installed on the repo, connector-based PR automation cannot find the target repository.
+- If local GitHub auth is still missing, CLI push remains blocked even after the repo exists.
+
 ## Target Identifiers
 
 - App target: `com.gstack.aquaminder`
