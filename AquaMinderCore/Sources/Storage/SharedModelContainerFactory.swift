@@ -18,16 +18,23 @@ public enum SharedModelContainerFactory {
         try makeSharedBootstrap().container
     }
 
-    public static func makeSharedBootstrap(fileManager: FileManager = .default) throws -> StoreBootstrap {
-        let resolution = try SharedStoreLocation.resolveSharedStoreURL(fileManager: fileManager)
+    public static func makeSharedBootstrap(
+        fileManager: FileManager = .default,
+        groupContainerURL: URL? = nil
+    ) throws -> StoreBootstrap {
+        let resolution: (url: URL, usesSharedContainer: Bool)
+        if let groupContainerURL {
+            resolution = SharedStoreLocation.resolveSharedStoreURL(groupContainerURL: groupContainerURL)
+        } else {
+            resolution = try SharedStoreLocation.resolveSharedStoreURL(fileManager: fileManager)
+        }
+
         return try makeBootstrap(at: resolution.url, usesSharedContainer: resolution.usesSharedContainer)
     }
 
     public static func makeFallbackBootstrap(fileManager: FileManager = .default) throws -> StoreBootstrap {
-        let fallbackURL = try SharedStoreLocation.storeURL(
-            rootDirectory: SharedStoreLocation.fallbackDirectoryURL(fileManager: fileManager)
-        )
-        return try makeBootstrap(at: fallbackURL, usesSharedContainer: false)
+        let resolution = try SharedStoreLocation.resolveFallbackStoreURL(fileManager: fileManager)
+        return try makeBootstrap(at: resolution.url, usesSharedContainer: resolution.usesSharedContainer)
     }
 
     public static func makeFixtureBootstrap(rootDirectory: URL) throws -> StoreBootstrap {
@@ -86,4 +93,3 @@ public enum SharedModelContainerFactory {
         )
     }
 }
-

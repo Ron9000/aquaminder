@@ -35,8 +35,8 @@ struct AquaMinderProvider: TimelineProvider {
         } catch {
             return AquaMinderEntry(
                 date: .now,
-                headline: "Workspace Ready",
-                detail: "Shared store scaffolded"
+                headline: "Shared Store Error",
+                detail: "Check App Group setup"
             )
         }
     }

@@ -1,5 +1,16 @@
 import Foundation
 
+public enum SharedStoreLocationError: LocalizedError {
+    case appGroupContainerUnavailable(identifier: String)
+
+    public var errorDescription: String? {
+        switch self {
+        case .appGroupContainerUnavailable(let identifier):
+            return "The App Group container \(identifier) is unavailable."
+        }
+    }
+}
+
 public enum SharedStoreLocation {
     public static let appGroupIdentifier = "group.com.gstack.aquaminder.shared"
     public static let fallbackDirectoryName = "AquaMinder"
@@ -26,10 +37,18 @@ public enum SharedStoreLocation {
     }
 
     public static func resolveSharedStoreURL(fileManager: FileManager = .default) throws -> (url: URL, usesSharedContainer: Bool) {
-        if let groupContainerURL = groupContainerURL(fileManager: fileManager) {
-            return (storeURL(rootDirectory: groupContainerURL), true)
+        guard let groupContainerURL = groupContainerURL(fileManager: fileManager) else {
+            throw SharedStoreLocationError.appGroupContainerUnavailable(identifier: appGroupIdentifier)
         }
 
-        return (try storeURL(rootDirectory: fallbackDirectoryURL(fileManager: fileManager)), false)
+        return resolveSharedStoreURL(groupContainerURL: groupContainerURL)
+    }
+
+    public static func resolveSharedStoreURL(groupContainerURL: URL) -> (url: URL, usesSharedContainer: Bool) {
+        (storeURL(rootDirectory: groupContainerURL), true)
+    }
+
+    public static func resolveFallbackStoreURL(fileManager: FileManager = .default) throws -> (url: URL, usesSharedContainer: Bool) {
+        (try storeURL(rootDirectory: fallbackDirectoryURL(fileManager: fileManager)), false)
     }
 }
