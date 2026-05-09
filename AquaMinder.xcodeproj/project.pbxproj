@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		106D451E35A3FC8B44C92349 /* AquaMinderMigrationPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44F065B37893BC64E279DEF /* AquaMinderMigrationPlan.swift */; };
+		18B77F47072F9D1E62173A41 /* SharedStoreBootstrapFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C2515CC9966EF4894C7AF4 /* SharedStoreBootstrapFailure.swift */; };
 		2E0B3DF4CE70643ADDAE1A36 /* AquaMinderCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2C3C544B8B3DE632A712DC /* AquaMinderCore.framework */; };
 		379F6738BF936CDC8268029F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 592755B7C4B232BD24DC39AF /* Assets.xcassets */; };
 		3F4C976ACEA5E91A572C4DDD /* AquaMinderCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2C3C544B8B3DE632A712DC /* AquaMinderCore.framework */; };
@@ -22,6 +23,7 @@
 		96682CBCF3FF26A6F0254CFE /* TodayPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE47E0F7ADAC4A3223ABE47 /* TodayPlaceholderView.swift */; };
 		9E36D6B7BAFD11310B50F1BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A197826AA3F462A08FB50EE4 /* Assets.xcassets */; };
 		C8B254D6B3BF32DD42CEA502 /* AquaMinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF99C371F5AB22844B8DB76 /* AquaMinderApp.swift */; };
+		F3055726E96EB9C847FF776F /* SharedStoreLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA24A24DA83F253E72A76A0B /* SharedStoreLocationTests.swift */; };
 		F75C5CB43D8F7B710B380B8E /* AquaMinderWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6B121B6C67A213D0CD6BE1 /* AquaMinderWidgetBundle.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,10 +82,12 @@
 		53B38257DC9543041AFBF470 /* SharedStoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStoreLocation.swift; sourceTree = "<group>"; };
 		592755B7C4B232BD24DC39AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E53FC34A5944487A8ACA966 /* AquaMinderSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaMinderSchema.swift; sourceTree = "<group>"; };
+		91C2515CC9966EF4894C7AF4 /* SharedStoreBootstrapFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStoreBootstrapFailure.swift; sourceTree = "<group>"; };
 		9CF99C371F5AB22844B8DB76 /* AquaMinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaMinderApp.swift; sourceTree = "<group>"; };
 		A197826AA3F462A08FB50EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFE47E0F7ADAC4A3223ABE47 /* TodayPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPlaceholderView.swift; sourceTree = "<group>"; };
 		E44F065B37893BC64E279DEF /* AquaMinderMigrationPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaMinderMigrationPlan.swift; sourceTree = "<group>"; };
+		EA24A24DA83F253E72A76A0B /* SharedStoreLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStoreLocationTests.swift; sourceTree = "<group>"; };
 		EC2C3C544B8B3DE632A712DC /* AquaMinderCore.framework */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.framework; path = AquaMinderCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3779B2A6A7845939008645 /* AquaMinderWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = AquaMinderWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6B121B6C67A213D0CD6BE1 /* AquaMinderWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaMinderWidgetBundle.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			children = (
 				E44F065B37893BC64E279DEF /* AquaMinderMigrationPlan.swift */,
 				4EDFA374407C6D79F5D2186F /* SharedModelContainerFactory.swift */,
+				91C2515CC9966EF4894C7AF4 /* SharedStoreBootstrapFailure.swift */,
 				53B38257DC9543041AFBF470 /* SharedStoreLocation.swift */,
 			);
 			path = Storage;
@@ -204,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				1B15E09F5F7E77B35F671AAD /* SharedModelContainerFactoryTests.swift */,
+				EA24A24DA83F253E72A76A0B /* SharedStoreLocationTests.swift */,
 			);
 			path = AquaMinderCoreTests;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DE801814C0346BFEC6D75D4 /* SharedModelContainerFactoryTests.swift in Sources */,
+				F3055726E96EB9C847FF776F /* SharedStoreLocationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +399,7 @@
 				106D451E35A3FC8B44C92349 /* AquaMinderMigrationPlan.swift in Sources */,
 				63F3DAFE027296BF248E2B15 /* AquaMinderSchema.swift in Sources */,
 				92ED8076B3DC0CB15C0BED76 /* SharedModelContainerFactory.swift in Sources */,
+				18B77F47072F9D1E62173A41 /* SharedStoreBootstrapFailure.swift in Sources */,
 				57F3663E50FC9A1A628CBDA7 /* SharedStoreLocation.swift in Sources */,
 				605EB4F9B3B4AD60D013B1EE /* TodaySummarySnapshot.swift in Sources */,
 			);

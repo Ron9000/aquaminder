@@ -1,6 +1,12 @@
 import AquaMinderCore
+import OSLog
 import SwiftUI
 import WidgetKit
+
+private let widgetSharedStoreLogger = Logger(
+    subsystem: Bundle.main.bundleIdentifier ?? "com.gstack.aquaminder.widget",
+    category: "SharedStoreBootstrap"
+)
 
 struct AquaMinderEntry: TimelineEntry {
     let date: Date
@@ -33,11 +39,22 @@ struct AquaMinderProvider: TimelineProvider {
                 detail: "\(snapshot.consumedML) / \(snapshot.goalML) mL"
             )
         } catch {
+            let failure = SharedStoreBootstrapFailure(error: error)
+            widgetSharedStoreLogger.error("Shared store bootstrap failed: \(failure.detail, privacy: .public)")
             return AquaMinderEntry(
                 date: .now,
                 headline: "Shared Store Error",
-                detail: "Check App Group setup"
+                detail: widgetFailureDetail(for: failure)
             )
+        }
+    }
+
+    private func widgetFailureDetail(for failure: SharedStoreBootstrapFailure) -> String {
+        switch failure.kind {
+        case .appGroupConfiguration:
+            return "Check App Group setup"
+        case .startup:
+            return "Open app for details"
         }
     }
 }

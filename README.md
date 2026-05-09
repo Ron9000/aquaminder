@@ -29,7 +29,7 @@ xcodebuild -project AquaMinder.xcodeproj \
 
 ## Notes
 
-- The shared store path is centralized in `AquaMinderCore/Sources/Storage/SharedStoreLocation.swift`.
-- The App Group identifier is set to `group.com.gstack.aquaminder.shared` and is wired through both app and widget entitlements.
+- The shared store path and App Group runtime lookup are centralized in `AquaMinderCore/Sources/Storage/SharedStoreLocation.swift`.
+- The App Group identifier is defined once in `APP_GROUP_IDENTIFIER`, embedded into both target `Info.plist` files and entitlements, and read at runtime from the active bundle.
 - Shared storage now fails fast when the App Group container is unavailable instead of silently falling back to target-local storage.
 - Release-time signing, capability, and TestFlight handoff steps are documented in [RELEASE.md](/Users/ronnybrunner/paperclip/gstack/aquaminder/RELEASE.md).
