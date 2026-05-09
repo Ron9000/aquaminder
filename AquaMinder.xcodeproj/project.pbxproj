@@ -1,0 +1,786 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		106D451E35A3FC8B44C92349 /* AquaMinderMigrationPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44F065B37893BC64E279DEF /* AquaMinderMigrationPlan.swift */; };
+		2E0B3DF4CE70643ADDAE1A36 /* AquaMinderCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2C3C544B8B3DE632A712DC /* AquaMinderCore.framework */; };
+		379F6738BF936CDC8268029F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 592755B7C4B232BD24DC39AF /* Assets.xcassets */; };
+		3F4C976ACEA5E91A572C4DDD /* AquaMinderCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2C3C544B8B3DE632A712DC /* AquaMinderCore.framework */; };
+		41674F712C99678389204763 /* AquaMinderWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FC3779B2A6A7845939008645 /* AquaMinderWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		57F3663E50FC9A1A628CBDA7 /* SharedStoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B38257DC9543041AFBF470 /* SharedStoreLocation.swift */; };
+		605EB4F9B3B4AD60D013B1EE /* TodaySummarySnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DFD40C9791A337E21F1E87 /* TodaySummarySnapshot.swift */; };
+		63F3DAFE027296BF248E2B15 /* AquaMinderSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E53FC34A5944487A8ACA966 /* AquaMinderSchema.swift */; };
+		655D741CBC88C39978A3CB9F /* AquaMinderWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2547871C7B06F97D61CC4ACE /* AquaMinderWidget.swift */; };
+		6DE801814C0346BFEC6D75D4 /* SharedModelContainerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15E09F5F7E77B35F671AAD /* SharedModelContainerFactoryTests.swift */; };
+		7CA98E76326F538777E5DCDF /* AquaMinderCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2C3C544B8B3DE632A712DC /* AquaMinderCore.framework */; };
+		92ED8076B3DC0CB15C0BED76 /* SharedModelContainerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFA374407C6D79F5D2186F /* SharedModelContainerFactory.swift */; };
+		96682CBCF3FF26A6F0254CFE /* TodayPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE47E0F7ADAC4A3223ABE47 /* TodayPlaceholderView.swift */; };
+		9E36D6B7BAFD11310B50F1BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A197826AA3F462A08FB50EE4 /* Assets.xcassets */; };
+		C8B254D6B3BF32DD42CEA502 /* AquaMinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF99C371F5AB22844B8DB76 /* AquaMinderApp.swift */; };
+		F75C5CB43D8F7B710B380B8E /* AquaMinderWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6B121B6C67A213D0CD6BE1 /* AquaMinderWidgetBundle.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B30C3B6E13D654E720382E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16D9233C88DBE3B8C378FBD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2B814D65D9E2EA94D0AC901;
+			remoteInfo = AquaMinderCore;
+		};
+		53EDC841CFA67D849736EC6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16D9233C88DBE3B8C378FBD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2B814D65D9E2EA94D0AC901;
+			remoteInfo = AquaMinderCore;
+		};
+		A4C442FBD00F51FE449008A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16D9233C88DBE3B8C378FBD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 263A368B3FE5E64EE4C72827;
+			remoteInfo = AquaMinderWidget;
+		};
+		A52811A91F94566721254474 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16D9233C88DBE3B8C378FBD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2B814D65D9E2EA94D0AC901;
+			remoteInfo = AquaMinderCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		105C07BDE5168D736A971130 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				41674F712C99678389204763 /* AquaMinderWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1B15E09F5F7E77B35F671AAD /* SharedModelContainerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedModelContainerFactoryTests.swift; sourceTree = "<group>"; };
+		2547871C7B06F97D61CC4ACE /* AquaMinderWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaMinderWidget.swift; sourceTree = "<group>"; };
+		2B5F4C106146229C5F8DF0C3 /* AquaMinderCoreTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = AquaMinderCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		44DFD40C9791A337E21F1E87 /* TodaySummarySnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaySummarySnapshot.swift; sourceTree = "<group>"; };
+		4EDFA374407C6D79F5D2186F /* SharedModelContainerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedModelContainerFactory.swift; sourceTree = "<group>"; };
+		51F4DD1BC0FCD34834946820 /* AquaMinder.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AquaMinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53B38257DC9543041AFBF470 /* SharedStoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStoreLocation.swift; sourceTree = "<group>"; };
+		592755B7C4B232BD24DC39AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6E53FC34A5944487A8ACA966 /* AquaMinderSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaMinderSchema.swift; sourceTree = "<group>"; };
+		9CF99C371F5AB22844B8DB76 /* AquaMinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaMinderApp.swift; sourceTree = "<group>"; };
+		A197826AA3F462A08FB50EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFE47E0F7ADAC4A3223ABE47 /* TodayPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPlaceholderView.swift; sourceTree = "<group>"; };
+		E44F065B37893BC64E279DEF /* AquaMinderMigrationPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaMinderMigrationPlan.swift; sourceTree = "<group>"; };
+		EC2C3C544B8B3DE632A712DC /* AquaMinderCore.framework */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.framework; path = AquaMinderCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC3779B2A6A7845939008645 /* AquaMinderWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = AquaMinderWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD6B121B6C67A213D0CD6BE1 /* AquaMinderWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaMinderWidgetBundle.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00C89F9D07554D9A4BA51D06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E0B3DF4CE70643ADDAE1A36 /* AquaMinderCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6182FD19CA8818E34B39A9DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CA98E76326F538777E5DCDF /* AquaMinderCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFE8E664E80594050A90F702 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F4C976ACEA5E91A572C4DDD /* AquaMinderCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2293009040E45E8FFFA1614A /* AquaMinderCore */ = {
+			isa = PBXGroup;
+			children = (
+				D43ADBD55F4958D3C35E3FC0 /* Sources */,
+			);
+			path = AquaMinderCore;
+			sourceTree = "<group>";
+		};
+		23EBD5C15833952B764A9244 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				44DFD40C9791A337E21F1E87 /* TodaySummarySnapshot.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		2440CCE9DE9FAC7A157F84B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E53FC34A5944487A8ACA966 /* AquaMinderSchema.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4376F5F8C0DA38EFEB87752B /* AquaMinderWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A197826AA3F462A08FB50EE4 /* Assets.xcassets */,
+				B67A29C026FC3716315BF482 /* Sources */,
+			);
+			path = AquaMinderWidget;
+			sourceTree = "<group>";
+		};
+		6B2F0DE2BFD6B14C7AC8C2F9 = {
+			isa = PBXGroup;
+			children = (
+				7C864627518B085B0944BCC6 /* AquaMinder */,
+				2293009040E45E8FFFA1614A /* AquaMinderCore */,
+				C913B9C0CF05E782BE14EE75 /* AquaMinderCoreTests */,
+				4376F5F8C0DA38EFEB87752B /* AquaMinderWidget */,
+				96252D3D714AAA365C54199B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7C864627518B085B0944BCC6 /* AquaMinder */ = {
+			isa = PBXGroup;
+			children = (
+				592755B7C4B232BD24DC39AF /* Assets.xcassets */,
+				F7E24DC2108A78F5E08EF2A0 /* Sources */,
+			);
+			path = AquaMinder;
+			sourceTree = "<group>";
+		};
+		96252D3D714AAA365C54199B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				51F4DD1BC0FCD34834946820 /* AquaMinder.app */,
+				EC2C3C544B8B3DE632A712DC /* AquaMinderCore.framework */,
+				2B5F4C106146229C5F8DF0C3 /* AquaMinderCoreTests.xctest */,
+				FC3779B2A6A7845939008645 /* AquaMinderWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3D3D699550270EC7E35F186 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				E44F065B37893BC64E279DEF /* AquaMinderMigrationPlan.swift */,
+				4EDFA374407C6D79F5D2186F /* SharedModelContainerFactory.swift */,
+				53B38257DC9543041AFBF470 /* SharedStoreLocation.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		B67A29C026FC3716315BF482 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2547871C7B06F97D61CC4ACE /* AquaMinderWidget.swift */,
+				FD6B121B6C67A213D0CD6BE1 /* AquaMinderWidgetBundle.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		C913B9C0CF05E782BE14EE75 /* AquaMinderCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B15E09F5F7E77B35F671AAD /* SharedModelContainerFactoryTests.swift */,
+			);
+			path = AquaMinderCoreTests;
+			sourceTree = "<group>";
+		};
+		D43ADBD55F4958D3C35E3FC0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2440CCE9DE9FAC7A157F84B5 /* Model */,
+				B3D3D699550270EC7E35F186 /* Storage */,
+				23EBD5C15833952B764A9244 /* Widget */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		F7E24DC2108A78F5E08EF2A0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9CF99C371F5AB22844B8DB76 /* AquaMinderApp.swift */,
+				AFE47E0F7ADAC4A3223ABE47 /* TodayPlaceholderView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		263A368B3FE5E64EE4C72827 /* AquaMinderWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A544FEA183AC1CB339C60BE /* Build configuration list for PBXNativeTarget "AquaMinderWidget" */;
+			buildPhases = (
+				F2DD7AB54F8F4AD67287DB85 /* Sources */,
+				5E3B678F7547AF68A185FAD5 /* Resources */,
+				6182FD19CA8818E34B39A9DF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2B0EBC5CB119FD396F53B6F /* PBXTargetDependency */,
+			);
+			name = AquaMinderWidget;
+			packageProductDependencies = (
+			);
+			productName = AquaMinderWidget;
+			productReference = FC3779B2A6A7845939008645 /* AquaMinderWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		50DAA5265864C9F503AA80C0 /* AquaMinderCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B242F1F345CBB5CD9BC660A0 /* Build configuration list for PBXNativeTarget "AquaMinderCoreTests" */;
+			buildPhases = (
+				0AE255DF268F9DE9E578C894 /* Sources */,
+				EFE8E664E80594050A90F702 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDB1A1DE7AE82744B15B639A /* PBXTargetDependency */,
+			);
+			name = AquaMinderCoreTests;
+			packageProductDependencies = (
+			);
+			productName = AquaMinderCoreTests;
+			productReference = 2B5F4C106146229C5F8DF0C3 /* AquaMinderCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D2B814D65D9E2EA94D0AC901 /* AquaMinderCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D407D4F889FA37C03EF441A0 /* Build configuration list for PBXNativeTarget "AquaMinderCore" */;
+			buildPhases = (
+				71E08FCAAD25D34C74A99F3C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AquaMinderCore;
+			packageProductDependencies = (
+			);
+			productName = AquaMinderCore;
+			productReference = EC2C3C544B8B3DE632A712DC /* AquaMinderCore.framework */;
+			productType = "com.apple.product-type.framework.static";
+		};
+		E502BB3B5A9598636206C03D /* AquaMinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB1057322ADF45E6546E1A57 /* Build configuration list for PBXNativeTarget "AquaMinder" */;
+			buildPhases = (
+				C7B86ABAC3313870D63F914A /* Sources */,
+				3D442A9245ED4FEFC1A0EA95 /* Resources */,
+				00C89F9D07554D9A4BA51D06 /* Frameworks */,
+				105C07BDE5168D736A971130 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A20C1391771A7CA0524CD2B2 /* PBXTargetDependency */,
+				5894E70FC9910352F748F1EC /* PBXTargetDependency */,
+			);
+			name = AquaMinder;
+			packageProductDependencies = (
+			);
+			productName = AquaMinder;
+			productReference = 51F4DD1BC0FCD34834946820 /* AquaMinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F16D9233C88DBE3B8C378FBD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					263A368B3FE5E64EE4C72827 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					50DAA5265864C9F503AA80C0 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					D2B814D65D9E2EA94D0AC901 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					E502BB3B5A9598636206C03D = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 966F918D1D62E9637390A247 /* Build configuration list for PBXProject "AquaMinder" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 6B2F0DE2BFD6B14C7AC8C2F9;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 96252D3D714AAA365C54199B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E502BB3B5A9598636206C03D /* AquaMinder */,
+				D2B814D65D9E2EA94D0AC901 /* AquaMinderCore */,
+				50DAA5265864C9F503AA80C0 /* AquaMinderCoreTests */,
+				263A368B3FE5E64EE4C72827 /* AquaMinderWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D442A9245ED4FEFC1A0EA95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				379F6738BF936CDC8268029F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E3B678F7547AF68A185FAD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E36D6B7BAFD11310B50F1BB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0AE255DF268F9DE9E578C894 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DE801814C0346BFEC6D75D4 /* SharedModelContainerFactoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71E08FCAAD25D34C74A99F3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				106D451E35A3FC8B44C92349 /* AquaMinderMigrationPlan.swift in Sources */,
+				63F3DAFE027296BF248E2B15 /* AquaMinderSchema.swift in Sources */,
+				92ED8076B3DC0CB15C0BED76 /* SharedModelContainerFactory.swift in Sources */,
+				57F3663E50FC9A1A628CBDA7 /* SharedStoreLocation.swift in Sources */,
+				605EB4F9B3B4AD60D013B1EE /* TodaySummarySnapshot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7B86ABAC3313870D63F914A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8B254D6B3BF32DD42CEA502 /* AquaMinderApp.swift in Sources */,
+				96682CBCF3FF26A6F0254CFE /* TodayPlaceholderView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2DD7AB54F8F4AD67287DB85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655D741CBC88C39978A3CB9F /* AquaMinderWidget.swift in Sources */,
+				F75C5CB43D8F7B710B380B8E /* AquaMinderWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5894E70FC9910352F748F1EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 263A368B3FE5E64EE4C72827 /* AquaMinderWidget */;
+			targetProxy = A4C442FBD00F51FE449008A4 /* PBXContainerItemProxy */;
+		};
+		A20C1391771A7CA0524CD2B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2B814D65D9E2EA94D0AC901 /* AquaMinderCore */;
+			targetProxy = A52811A91F94566721254474 /* PBXContainerItemProxy */;
+		};
+		B2B0EBC5CB119FD396F53B6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2B814D65D9E2EA94D0AC901 /* AquaMinderCore */;
+			targetProxy = 53EDC841CFA67D849736EC6A /* PBXContainerItemProxy */;
+		};
+		EDB1A1DE7AE82744B15B639A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2B814D65D9E2EA94D0AC901 /* AquaMinderCore */;
+			targetProxy = 1B30C3B6E13D654E720382E5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0FAC3E6DEC479A525EE8A674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gstack.aquaminder.core;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		48C125EA4E9A028CD85A082F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AquaMinder/Support/AquaMinder.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = AquaMinder/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gstack.aquaminder;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A75260D91352ECE472B63A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_GROUP_IDENTIFIER = group.com.gstack.aquaminder.shared;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		6C0C2EE17BE6E25E8DB8FB30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gstack.aquaminder.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "";
+			};
+			name = Debug;
+		};
+		85F0A2A41561E46B12741B82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AquaMinderWidget/Support/AquaMinderWidget.entitlements;
+				INFOPLIST_FILE = AquaMinderWidget/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gstack.aquaminder.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AFEFA194956AB77DE132C7FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AquaMinderWidget/Support/AquaMinderWidget.entitlements;
+				INFOPLIST_FILE = AquaMinderWidget/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gstack.aquaminder.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B2E0C998DFE3C71B484988ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gstack.aquaminder.core;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		C189A0B89A109FB48FEE1D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_GROUP_IDENTIFIER = group.com.gstack.aquaminder.shared;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		C8183296D9AF048568EC66A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AquaMinder/Support/AquaMinder.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = AquaMinder/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gstack.aquaminder;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F5FB7330375445B4B1016BE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gstack.aquaminder.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A544FEA183AC1CB339C60BE /* Build configuration list for PBXNativeTarget "AquaMinderWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85F0A2A41561E46B12741B82 /* Debug */,
+				AFEFA194956AB77DE132C7FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		966F918D1D62E9637390A247 /* Build configuration list for PBXProject "AquaMinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A75260D91352ECE472B63A2 /* Debug */,
+				C189A0B89A109FB48FEE1D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AB1057322ADF45E6546E1A57 /* Build configuration list for PBXNativeTarget "AquaMinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48C125EA4E9A028CD85A082F /* Debug */,
+				C8183296D9AF048568EC66A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B242F1F345CBB5CD9BC660A0 /* Build configuration list for PBXNativeTarget "AquaMinderCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C0C2EE17BE6E25E8DB8FB30 /* Debug */,
+				F5FB7330375445B4B1016BE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D407D4F889FA37C03EF441A0 /* Build configuration list for PBXNativeTarget "AquaMinderCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FAC3E6DEC479A525EE8A674 /* Debug */,
+				B2E0C998DFE3C71B484988ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F16D9233C88DBE3B8C378FBD /* Project object */;
+}
