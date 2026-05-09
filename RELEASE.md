@@ -16,6 +16,7 @@ One-time bootstrap still required outside this checkout:
 1. Create the empty GitHub repository `ronbruenner-commits/aquaminder`.
 2. Install the connected GitHub app on that repository so agent-driven PR creation can see it.
 3. Confirm the repo default branch is `main`.
+4. Run `gh auth login` on the release machine and confirm `gh auth status` succeeds before using CLI fallback flows.
 
 Once the repo exists, the publish path is:
 
@@ -28,7 +29,7 @@ Current failure modes to expect:
 
 - If the repo does not exist yet, push and PR creation both fail.
 - If the GitHub app is not installed on the repo, connector-based PR automation cannot find the target repository.
-- If local GitHub auth is still missing, CLI push remains blocked even after the repo exists.
+- If local GitHub auth is still missing, CLI push and `gh` fallback PR flows remain blocked even after the repo exists.
 
 ## Target Identifiers
 
