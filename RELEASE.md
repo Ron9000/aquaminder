@@ -4,32 +4,35 @@ This repository is wired for the first AquaMinder iOS/TestFlight handoff. Use th
 
 ## GitHub Publish Path
 
-Release should treat `ronbruenner-commits/aquaminder` as the canonical GitHub repository for this checkout.
+Release should treat `Ron9000/aquaminder` as the canonical GitHub repository for this checkout.
 
-- HTTPS repo URL: `https://github.com/ronbruenner-commits/aquaminder.git`
-- SSH remote URL: `git@github.com:ronbruenner-commits/aquaminder.git`
+- Verified HTTPS remote URL: `https://github.com/Ron9000/aquaminder.git`
+- Optional SSH remote URL: `git@github.com:Ron9000/aquaminder.git`
 - Release branch to publish: `codex/gst-15-release-plumbing`
 - Base branch: `main`
 
 One-time bootstrap still required outside this checkout:
 
-1. Create the empty GitHub repository `ronbruenner-commits/aquaminder`.
-2. Install the connected GitHub app on that repository so agent-driven PR creation can see it.
+1. Confirm the GitHub repository `Ron9000/aquaminder` remains the canonical remote.
+2. Install the connected OpenAI `GitHub` app on that repository only if connector-based PR automation is needed.
 3. Confirm the repo default branch is `main`.
-4. Run `gh auth login` on the release machine and confirm `gh auth status` succeeds before using CLI fallback flows.
+4. Run `gh auth login` on the release machine and confirm `gh auth status` succeeds before using CLI fallback PR flows.
 
 Once the repo exists, the publish path is:
 
-1. Confirm `origin` points at `git@github.com:ronbruenner-commits/aquaminder.git`.
+1. Confirm `origin` points at `https://github.com/Ron9000/aquaminder.git`.
 2. Push `main` if the remote is empty.
 3. Push `codex/gst-15-release-plumbing`.
-4. Open a draft PR from `codex/gst-15-release-plumbing` to `main`.
+4. Open a draft PR from `codex/gst-15-release-plumbing` to `main` with either:
+   - `gh pr create` after `gh auth login`, or
+   - the OpenAI `GitHub` app after it has been granted access to `Ron9000/aquaminder`.
 
 Current failure modes to expect:
 
-- If the repo does not exist yet, push and PR creation both fail.
-- If the GitHub app is not installed on the repo, connector-based PR automation cannot find the target repository.
-- If local GitHub auth is still missing, CLI push and `gh` fallback PR flows remain blocked even after the repo exists.
+- If HTTPS Git auth is missing, push fails even though the repo exists.
+- If the OpenAI `GitHub` app is not installed on the repo, connector-based PR automation cannot find the target repository.
+- If `gh auth login` has not been completed, `gh` PR flows remain blocked even if pushes succeed.
+- If you rely on SSH without a configured GitHub key, the remote rejects with `Permission denied (publickey)`.
 
 ## Target Identifiers
 
