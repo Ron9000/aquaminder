@@ -37,8 +37,17 @@ targets:
     deploymentTarget: "17.0"
     info:
       path: AquaMinderWidget/Support/Info.plist
+      properties:
+        APP_GROUP_IDENTIFIER: $(APP_GROUP_IDENTIFIER)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
     entitlements:
       path: AquaMinderWidget/Support/AquaMinderWidget.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - $(APP_GROUP_IDENTIFIER)
     sources:
       - path: AquaMinderWidget/Sources
       - path: AquaMinderWidget/Assets.xcassets
@@ -57,8 +66,15 @@ targets:
     deploymentTarget: "17.0"
     info:
       path: AquaMinder/Support/Info.plist
+      properties:
+        APP_GROUP_IDENTIFIER: $(APP_GROUP_IDENTIFIER)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
     entitlements:
       path: AquaMinder/Support/AquaMinder.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - $(APP_GROUP_IDENTIFIER)
     sources:
       - path: AquaMinder/Sources
       - path: AquaMinder/Assets.xcassets
@@ -100,4 +116,3 @@ schemes:
       config: Debug
     archive:
       config: Release
-

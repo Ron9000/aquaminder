@@ -47,10 +47,12 @@ These values live in [project.yml](/Users/ronnybrunner/paperclip/gstack/aquamind
 ## Configured Capabilities
 
 - `AquaMinder` and `AquaMinderWidget` both ship with `com.apple.security.application-groups` entitlements.
-- Both targets resolve the App Group from the shared `APP_GROUP_IDENTIFIER` build setting.
+- `AquaMinderWidget` now declares the `com.apple.widgetkit-extension` extension point in its shipped `Info.plist`.
+- Both targets publish the shared `APP_GROUP_IDENTIFIER` build setting into their shipped `Info.plist` files and runtime resolves the App Group from that bundled value.
+- Both shipped bundles resolve `CFBundleShortVersionString` and `CFBundleVersion` from `MARKETING_VERSION` and `CURRENT_PROJECT_VERSION`.
 - The shared store no longer silently falls back to per-target storage when the App Group container is unavailable.
-- The app surfaces a launch-time configuration error when the App Group is missing.
-- The widget surfaces a shared-store setup error instead of pretending the shared container is healthy.
+- The app only shows App Group remediation when the container itself is unavailable; other bootstrap failures stay generic and keep the underlying error visible.
+- The widget only suggests App Group setup changes when the container lookup fails; other bootstrap failures direct the operator back to the app diagnostics.
 
 Relevant files:
 
@@ -92,6 +94,16 @@ Before the first external build:
 The current release plumbing was verified locally with:
 
 ```sh
+xcodebuild -project AquaMinder.xcodeproj \
+  -scheme AquaMinder \
+  -configuration Release \
+  -destination 'generic/platform=iOS Simulator' \
+  CODE_SIGNING_ALLOWED=NO \
+  build
+
+plutil -p ~/Library/Developer/Xcode/DerivedData/AquaMinder-*/Build/Products/Release-iphonesimulator/AquaMinder.app/Info.plist
+plutil -p ~/Library/Developer/Xcode/DerivedData/AquaMinder-*/Build/Products/Release-iphonesimulator/AquaMinderWidget.appex/Info.plist
+
 xcodebuild test -project AquaMinder.xcodeproj \
   -scheme AquaMinder \
   -destination 'platform=iOS Simulator,name=iPhone 17,OS=26.2' \

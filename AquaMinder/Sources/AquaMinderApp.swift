@@ -1,6 +1,12 @@
 import SwiftUI
 import SwiftData
 import AquaMinderCore
+import OSLog
+
+private let sharedStoreLogger = Logger(
+    subsystem: Bundle.main.bundleIdentifier ?? "com.gstack.aquaminder",
+    category: "SharedStoreBootstrap"
+)
 
 @main
 struct AquaMinderApp: App {
@@ -10,7 +16,9 @@ struct AquaMinderApp: App {
         do {
             launchState = .ready(try SharedModelContainerFactory.makeSharedBootstrap())
         } catch {
-            launchState = .failed(error.localizedDescription)
+            let failure = SharedStoreBootstrapFailure(error: error)
+            sharedStoreLogger.error("Shared store bootstrap failed: \(failure.detail, privacy: .public)")
+            launchState = .failed(failure)
         }
     }
 
@@ -29,37 +37,83 @@ struct AquaMinderApp: App {
                 usingSharedContainer: bootstrap.usesSharedContainer
             )
             .modelContainer(bootstrap.container)
-        case .failed(let message):
-            BootstrapFailureView(message: message)
+        case .failed(let failure):
+            BootstrapFailureView(failure: failure)
         }
     }
 }
 
 private enum LaunchState {
     case ready(StoreBootstrap)
-    case failed(String)
+    case failed(SharedStoreBootstrapFailure)
 }
 
 private struct BootstrapFailureView: View {
-    let message: String
+    let failure: SharedStoreBootstrapFailure
 
     var body: some View {
         NavigationStack {
             List {
-                Section("Shared Store Configuration Error") {
-                    Label("The App Group container could not be opened.", systemImage: "exclamationmark.triangle.fill")
+                Section(sectionTitle) {
+                    Label(summary, systemImage: "exclamationmark.triangle.fill")
                         .foregroundStyle(.orange)
-                    Text(message)
+                }
+
+                Section("Underlying Error") {
+                    Text(failure.detail)
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
 
-                Section("Expected Fix") {
-                    Text("Confirm the AquaMinder app and widget both include the same App Group entitlement.")
-                    Text("Shared hydration data should never fall back to isolated per-target storage.")
+                Section(recoveryTitle) {
+                    ForEach(recoverySteps, id: \.self) { step in
+                        Text(step)
+                    }
                 }
             }
             .navigationTitle("AquaMinder")
+        }
+    }
+
+    private var sectionTitle: String {
+        switch failure.kind {
+        case .appGroupConfiguration:
+            return "Shared Store Configuration Error"
+        case .startup:
+            return "Shared Store Startup Error"
+        }
+    }
+
+    private var summary: String {
+        switch failure.kind {
+        case .appGroupConfiguration:
+            return "The App Group container could not be opened."
+        case .startup:
+            return "AquaMinder could not start the shared store."
+        }
+    }
+
+    private var recoveryTitle: String {
+        switch failure.kind {
+        case .appGroupConfiguration:
+            return "Expected Fix"
+        case .startup:
+            return "Next Step"
+        }
+    }
+
+    private var recoverySteps: [String] {
+        switch failure.kind {
+        case .appGroupConfiguration:
+            return [
+                "Confirm the AquaMinder app and widget both include the same App Group entitlement.",
+                "Shared hydration data should never fall back to isolated per-target storage."
+            ]
+        case .startup:
+            return [
+                "Inspect the underlying bootstrap error before changing entitlements.",
+                "Only treat this as an App Group issue when the error explicitly says the container is unavailable."
+            ]
         }
     }
 }
